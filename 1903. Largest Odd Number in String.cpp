@@ -1,0 +1,23 @@
+class Solution {
+public:
+    string largestOddNumber(string num) {
+        // for(int i = num.size() - 1; i >= 0; i--) {
+        //     if(num[i] & 1)
+        //         return num.substr(0, i + 1);
+        // }
+        // return "";
+
+        if(num.back()%2==1) return num;
+        int i ;
+
+        for(i=num.size()-1 ; i>=0; --i )
+        {
+            int n = num[i];
+            
+            if(n % 2 != 0 )
+                return num.substr(0,i+1);
+        }
+        return "";
+        
+    }
+};
